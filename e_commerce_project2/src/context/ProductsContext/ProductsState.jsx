@@ -47,8 +47,8 @@ export const ProductsProvider = ({ children }) => {
             getProducts,
             addCart,
             clearCart,
-            /* deleteProduct,
-            createProduct, */
+            deleteProduct,
+            createProduct, 
     
         }}
 		>
@@ -57,4 +57,3 @@ export const ProductsProvider = ({ children }) => {
     )
 }
 export const ProductsContext = createContext(initialState)
-

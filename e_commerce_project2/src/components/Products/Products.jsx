@@ -1,6 +1,14 @@
 import React from 'react'
 
 const Products = () => {
+  const { getProducts, products, addCart, cart } = useContext(ProductsContext)
+  useEffect(() => {
+    getProducts()
+  }, [])
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }, [cart])
+
   return (
     <main className='products'>
       <ul>

@@ -15,7 +15,27 @@ function TheHeader() {
 			navigate('/')
 		}, 2000)
 	}
+
 	return(
+		<>
+		{token ? (
+			<>
+			  <button onClick={logoutUser}>
+				<Link to="/">Logout</Link>
+			  </button>
+			  <Link to="/profile">Profile</Link>
+			  <Link to="/products">Products</Link>
+			  <Link to="/cart">
+				<ShoppingCartOutlined />
+			  </Link>
+			</>
+		   ) : (
+			<Link to="/">Login</Link>
+		   )}
+		   </>
+		   
+	)
+	/* return(
 		<>
 			<div className="header">
 				<NavBar/>
@@ -34,7 +54,7 @@ function TheHeader() {
 				<Cart/>
 			</div>
 		</>
-	)
+	) */
 
 	/* return (
 		<nav className="header">

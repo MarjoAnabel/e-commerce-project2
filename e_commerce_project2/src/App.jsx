@@ -1,12 +1,15 @@
 import './App.css'
 import TheHeader from './components/TheHeader/TheHEader'
 import { ProductsProvider } from './context/ProductsContext/ProductsState'
+import { OrdersProvider } from './context/OrdersContext/OrdersState'
+
 
 function App() {
 
   return (
     <>
     <ProductsProvider>
+    <OrdersProvider>
       <Router>
         <TheHeader />
         {/* <Products/> */}
@@ -18,6 +21,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </Router>
+      </OrdersProvider>
     </ProductsProvider>
     </>
   )
