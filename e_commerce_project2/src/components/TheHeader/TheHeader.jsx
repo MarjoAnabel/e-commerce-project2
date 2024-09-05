@@ -19,8 +19,8 @@ function TheHeader() {
 	return(
 		<>
 			<div className="header navbar bg-body-tertiary fixed-top">
-				<div class="container-fluid">
-					<a class="navbar-brand" href="#"><div>LOGO</div></a>
+				<div className="container-fluid">
+					<a className="navbar-brand" href="#"><div>LOGO</div></a>
 					<Cart/>	
 					<NavBar/>
 				</div>
