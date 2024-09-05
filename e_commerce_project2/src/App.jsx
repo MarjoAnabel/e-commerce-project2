@@ -8,25 +8,19 @@ import Products from './components/Products/Products';
 import { ProductsProvider } from './context/ProductsContext/ProductsState';
 import products from './context/ProductsContext/ProductsReducer';
 
-// import { ProductsProvider } from './context/ProductsContext/ProductsState'
-
-
 function App() {
 
   return (
     <>
-    <ProductsProvider>
-
-    <Router>
+      <ProductsProvider>
+        <Router>
           {/* <TheHeader /> */}
           <Routes>
             <Route path="/" element={<TheHeader />} />
             <Route path="/products" element={<Products products={products}/>} />
           </Routes>
         </Router>
-    </ProductsProvider>
-        
-        
+      </ProductsProvider>
     </>
   )
   /* return (
