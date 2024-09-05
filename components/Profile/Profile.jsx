@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react'
-import { UserContext } from '../../context/UserContext/UserStage'
+import { UserContext } from '../../context/UserContext/UserState'
 
 const Profile = () => {
  const { getUserInfo, user } = useContext(UserContext)

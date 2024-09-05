@@ -1,19 +1,32 @@
-import { useContext } from 'react'
-import { UserContext } from '../../context/UserContext/UserStage'
+import { useContext, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { UserContext } from '../../context/UserContext/UserState'
 import { Form, Input, Button } from 'antd'
 
 const Login = () => {
-        const { login } = useContext(UserContext)
-       
-        const onFinish = (values) => {
-          login(values)
-        }
-       
-        const onFinishFailed = (errorInfo) => {
-          console.log('Failed:', errorInfo)
-        }
-       
-return (
+  const { login } = useContext(UserContext)
+  const navigate = useNavigate()
+
+	useEffect(() => {
+		setTimeout(() => {
+			const foundToken = JSON.parse(localStorage.getItem('token'))
+
+			if (foundToken) {
+				navigate('/profile')
+			}
+		}, 2000)
+	}, [login])
+
+
+  const onFinish = (values) => {
+    login(values)
+  }
+ 
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo)
+  }
+ 
+  return (
     <div className="container">
      <Form
        name="basic"
@@ -24,7 +37,7 @@ return (
        onFinishFailed={onFinishFailed}
        autoComplete="off"
      >
-       <Form.Item label="Name" name="Name" rules={[{ required: true, message: 'Please input your Name!' }]}>
+       <Form.Item label="name" name="name" rules={[{ required: true, message: 'Please input your name!' }]}>
          <Input />
        </Form.Item>
        <Form.Item label="Password" name="password" rules={[{ required: true, message: 'Please input your password!' }]}>
@@ -35,7 +48,9 @@ return (
        </Form.Item>
      </Form>
    </div>
-)
-}
+  )
+
+  }
+  
 
 export default Login
