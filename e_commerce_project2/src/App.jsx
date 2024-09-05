@@ -1,3 +1,4 @@
+import { ProductsContext } from './context/ProductsContext/ProductsState';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -6,22 +7,28 @@ import './App.css'
 import TheHeader from './components/TheHeader/TheHeader'
 import Products from './components/Products/Products';
 import { ProductsProvider } from './context/ProductsContext/ProductsState';
-import products from './context/ProductsContext/ProductsReducer';
+
+import React, { useEffect, useContext } from 'react';
+
 
 function App() {
+  const { getProducts } = useContext(ProductsContext);
 
+    useEffect(() => {
+        getProducts();
+    }, [getProducts]);
   return (
-    <>
+    
       <ProductsProvider>
         <Router>
-          {/* <TheHeader /> */}
+       
           <Routes>
             <Route path="/" element={<TheHeader />} />
-            <Route path="/products" element={<Products products={products}/>} />
+            <Route path="/products" element={<Products/>} />
           </Routes>
         </Router>
       </ProductsProvider>
-    </>
+    
   )
   /* return (
     <>

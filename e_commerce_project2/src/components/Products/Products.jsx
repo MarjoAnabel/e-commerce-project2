@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Products = ({ products }) => {
+const Products = () => {
 
   const validProducts = Array.isArray(products) ? products : [];
 
@@ -21,11 +21,11 @@ const Products = ({ products }) => {
           return (
             <li key={product.id}>
               <img
-                src={product.thumbnail}
+                src={product.image}
                 alt={product.title}
               />
               <div>
-                <strong>{product.name}</strong> - ${product.price}
+                <strong>{product.title}</strong> - ${product.price}
               </div>
               <div>
                 <button
