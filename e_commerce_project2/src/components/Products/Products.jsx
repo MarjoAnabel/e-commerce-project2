@@ -1,10 +1,13 @@
 import React from 'react'
 
-const Products = () => {
+const Products = ({ products }) => {
+
+  const validProducts = Array.isArray(products) ? products : [];
+
   return (
     <main className='products'>
       <ul>
-        {products.slice(0, 10).map(product => {
+        {validProducts.slice(0, 10).map(product => {
           const isProductInCart = checkProductInCart(product)
 
           return (
@@ -14,7 +17,7 @@ const Products = () => {
                 alt={product.title}
               />
               <div>
-                <strong>{product.title}</strong> - ${product.price}
+                <strong>{product.name}</strong> - ${product.price}
               </div>
               <div>
                 <button
@@ -37,6 +40,7 @@ const Products = () => {
       </ul>
     </main>
   )
+  
 }
 
 export default Products
