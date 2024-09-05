@@ -46,54 +46,7 @@ function TheHeader() {
 	// 			<Cart/>
 	// 		</div>
 	// 	</>
-	// )
-
-	/* return (
-		<nav className="header">
-			<h1>Header</h1>
-			{token ? (
-				<>
-					<button onClick={logoutUser}>
-						<Link to="/">Logout</Link>
-					</button>
-					<Link to="/profile">Profile</Link>
-					<Link to="/products">Products</Link>
-					<Link to="/cart">
-						<ShoppingCartOutlined />
-					</Link>
-				</>
-			) : (
-				<Link to="/">Login</Link>
-			)}
-		</nav>
-	) */
-	/* function MobileNav() {
-		return(
-			<div className="display-mobile-nav">
-				<div className="mobile-nav-links">
-					{isSignedIn ? (
-						<UserProfile signIn={signIn} getUserData={getUserData} />
-					) : (
-						""
-					)}
-					<Link to="/">
-						<p>Home</p>
-					</Link>
-					<Link to="/orders">
-						<p>My Orders</p>
-					</Link>
-					<Link to="/wishlist">
-						<p>Wishlist</p>
-					</Link>
-				</div>
-				<div className="close-mobile-menu" onClick={handleMobileMenu}>
-					<CloseIcon />
-				</div>
-		</div>
-		)
-	} */
-
-		
+	// )		
 }
 
 export default TheHeader

@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './App.css'
+
 import TheHeader from './components/TheHeader/TheHeader'
 import Products from './components/Products/Products';
 import { ProductsProvider } from './context/ProductsContext/ProductsState';
@@ -9,11 +10,13 @@ import products from './context/ProductsContext/ProductsReducer';
 
 // import { ProductsProvider } from './context/ProductsContext/ProductsState'
 
+
 function App() {
 
   return (
     <>
     <ProductsProvider>
+
     <Router>
           {/* <TheHeader /> */}
           <Routes>
@@ -29,6 +32,7 @@ function App() {
   /* return (
     <>
     <ProductsProvider>
+    <OrdersProvider>
       <Router>
         <TheHeader />
         <Products/>
@@ -40,6 +44,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </Router>
+      </OrdersProvider>
     </ProductsProvider>
     </>
   ) */

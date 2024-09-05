@@ -4,6 +4,14 @@ const Products = ({ products }) => {
 
   const validProducts = Array.isArray(products) ? products : [];
 
+  // const { getProducts, products, addCart, cart } = useContext(ProductsContext)
+  // useEffect(() => {
+  //   getProducts()
+  // }, [])
+  // useEffect(() => {
+  //   localStorage.setItem('cart', JSON.stringify(cart))
+  // }, [cart])
+
   return (
     <main className='products'>
       <ul>
