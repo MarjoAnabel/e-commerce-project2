@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 
 
 function TheHeader() {
+
  return (
    <nav className="header">
      <h1>Header</h1>

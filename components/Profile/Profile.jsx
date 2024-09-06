@@ -1,15 +1,13 @@
-import { useContext, useEffect } from 'react'
-import { UserContext } from '../../context/UserContext/UserState'
+import { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../context/UserContext/UserState';
 
 const Profile = () => {
- const { getUserInfo, user } = useContext(UserContext)
-
- useEffect(() => {
-   getUserInfo()
- }, [])
-
- return <>
-   { user ? <h1>Profile {user.name}</h1> : <p>Loading...</p> }
- </>
-}
+  const { getUserInfo, user } = useContext(UserContext)
+  if (!user) {
+    getUserInfo()
+    return <p>Loading user data...</p>;
+  }
+  return <h1>Bienvenid@ {user.name}</h1>
+};
 export default Profile
+
