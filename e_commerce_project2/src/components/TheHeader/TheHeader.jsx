@@ -1,12 +1,12 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
-import { UserContext } from '../../context/UserContext/UserState'
-import { ShoppingCartOutlined } from '@ant-design/icons'
+// import { UserContext } from '../../context/UserContext/UserState'
+// import { ShoppingCartOutlined } from '@ant-design/icons'
 import NavBar from '../NavBar/NavBar'
 
 function TheHeader() {
 	const navigate = useNavigate()
-	const { token, logout } = useContext(UserContext)
+	// const { token, logout } = useContext(UserContext)
 
 	const logoutUser = () => {
 		logout()
@@ -15,9 +15,10 @@ function TheHeader() {
 			navigate('/')
 		}, 2000)
 	}
-
+	const token=1
 	return(
 		<>
+		<div>Hola?</div>
 		{token ? (
 			<>
 			  <button onClick={logoutUser}>

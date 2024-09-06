@@ -1,5 +1,5 @@
 import { createContext, useReducer } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 import ProductsReducer from './ProductsReducer'
 
 const cartStorage = JSON.parse(localStorage.getItem('cart'))
@@ -47,8 +47,8 @@ export const ProductsProvider = ({ children }) => {
             getProducts,
             addCart,
             clearCart,
-            deleteProduct,
-            createProduct, 
+            // deleteProduct,
+            // createProduct, 
     
         }}
 		>
