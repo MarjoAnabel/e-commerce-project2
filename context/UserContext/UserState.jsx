@@ -43,18 +43,31 @@ export const UserProvider = ({ children }) => {
     }
 
     const getUserInfo = async () => {
-      const token = JSON.parse(localStorage.getItem('token'))
-      const res = await axios.get(`${API_URL}/users/userLogin`, {
+      try {
+        const token = JSON.parse(localStorage.getItem('token'));
+      
+        if (!token) {
+        throw new Error('Token not found');
+        }
+      
+        const res = await axios.get(`${API_URL}/users/userLogin`, {
         headers: {
           authorization: token,
         },
-      })
-      dispatch({
-        type: 'GET_USER_INFO',
-        payload: res.data,
-      })
-      return res
-    }
+        });
+      
+        if (res.data && res.data.user) {
+        dispatch({
+          type: 'GET_USER_INFO',
+          payload: res.data.user,
+        });
+        } else {
+        console.error('User info not found in the response');
+        }
+      } catch (error) {
+        console.error('Error fetching user info:', error);
+      }
+      }
    
 
   return (

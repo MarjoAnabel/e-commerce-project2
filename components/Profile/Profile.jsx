@@ -3,6 +3,7 @@ import { UserContext } from '../../context/UserContext/UserState';
 
 const Profile = () => {
   const { getUserInfo, user } = useContext(UserContext)
+  console.log (user)
   if (!user) {
     getUserInfo()
     return <p>Loading user data...</p>;
