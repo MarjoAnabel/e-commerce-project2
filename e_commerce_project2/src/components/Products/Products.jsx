@@ -1,24 +1,27 @@
 import React from 'react'
 
 const Products = () => {
-  const { getProducts, products, addCart, cart } = useContext(ProductsContext)
-  useEffect(() => {
-    getProducts()
-  }, [])
-  useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart))
-  }, [cart])
+
+  const validProducts = Array.isArray(products) ? products : [];
+
+  // const { getProducts, products, addCart, cart } = useContext(ProductsContext)
+  // useEffect(() => {
+  //   getProducts()
+  // }, [])
+  // useEffect(() => {
+  //   localStorage.setItem('cart', JSON.stringify(cart))
+  // }, [cart])
 
   return (
     <main className='products'>
       <ul>
-        {products.slice(0, 10).map(product => {
+        {validProducts.slice(0, 10).map(product => {
           const isProductInCart = checkProductInCart(product)
 
           return (
             <li key={product.id}>
               <img
-                src={product.thumbnail}
+                src={product.image}
                 alt={product.title}
               />
               <div>
@@ -45,6 +48,7 @@ const Products = () => {
       </ul>
     </main>
   )
+  
 }
 
 export default Products
