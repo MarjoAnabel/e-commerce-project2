@@ -8,15 +8,13 @@ import Products from './components/Products/Products';
 import { ProductsProvider } from './context/ProductsContext/ProductsState';
 
 import React, { useEffect, useContext } from 'react';
-import TheHeader from './components/TheHeader/TheHEader';
-
-
+import TheHeader from './components/TheHeader/TheHeader';
 
 function App() {
   const { getProducts } = useContext(ProductsContext);
 
     useEffect(() => {
-        getProducts();
+        getProducts;
     }, [getProducts]);
   return (
     
@@ -24,32 +22,13 @@ function App() {
         <Router>
        
           <Routes>
-            <Route path="/" element={<TheHeader />} />
+            <Route path="/" element={<TheHeader/>} />
             <Route path="/products" element={<Products/>} />
           </Routes>
         </Router>
       </ProductsProvider>
     
   )
-  /* return (
-    <>
-    <ProductsProvider>
-    <OrdersProvider>
-      <Router>
-        <TheHeader />
-        <Products/>
-        <Routes>
-          <Route path="/" element={<TheHeader />} />
-          {/* <Route path="/login" element={<Login />} /> */}
-          {/* <Route path="/profile" element={<Profile />} /> */}
-          {/* <Route path="/products" element={<Products />} /> */}
-          {/* <Route path="/cart" element={<Cart />} /> */}
-        </Routes>
-      </Router>
-      </OrdersProvider>
-    </ProductsProvider>
-    </>
-  ) */
 }
 
 export default App

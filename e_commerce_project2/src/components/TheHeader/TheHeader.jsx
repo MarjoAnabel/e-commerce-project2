@@ -20,7 +20,7 @@ function TheHeader() {
 		}, 2000)
 	}
 	const token=1
-	return(
+	/* return(
 		<>
 		<div>Hola?</div>
 		{token ? (
@@ -39,6 +39,18 @@ function TheHeader() {
 		   )}
 		   </>
 		   
+	) */
+	return(
+		<>
+			<div className="header navbar bg-body-tertiary fixed-top">
+				<div className="container-fluid">
+					<a className="navbar-brand" href="#"><div>LOGO</div></a>
+					<Cart/>	
+					<NavBar/>
+				</div>
+
+			</div>
+		</>
 	)
 	//  return(
 	// 	<>
@@ -68,18 +80,7 @@ function TheHeader() {
 	// 		navigate('/')
 	// 	}, 2000)
 	// }
-	return(
-		<>
-			<div className="header navbar bg-body-tertiary fixed-top">
-				<div className="container-fluid">
-					<a className="navbar-brand" href="#"><div>LOGO</div></a>
-					<Cart/>	
-					<NavBar/>
-				</div>
-
-			</div>
-		</>
-	)
+	
 	// return(
 	// 	<>
 	// 		<div className="header">

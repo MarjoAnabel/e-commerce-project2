@@ -1,5 +1,5 @@
 import { createContext, useReducer } from 'react'
-// import axios from 'axios'
+import axios from 'axios'
 import ProductsReducer from './ProductsReducer'
 
 const cartStorage = JSON.parse(localStorage.getItem('cart') || '[]')
@@ -10,7 +10,10 @@ const initialState = {
     product: {},
 }
 
-const API_URL = 'https://fakestoreapi.com'
+// const API_URL = 'https://fakestoreapi.com'
+const API_URL = 'http://localhost:3000'
+
+export const ProductsContext = createContext(initialState);
 
 export const ProductsProvider = ({ children }) => {
     const [state, dispatch] = useReducer(ProductsReducer, initialState)
@@ -22,10 +25,10 @@ export const ProductsProvider = ({ children }) => {
                 type: 'GET_PRODUCTS',
                 payload: res.data,
             })
+            console.log("productos extraidos"+res.data)
         }catch (error){
             console.error("error en la peticion de productos", error)
         }
-		// return res
 	}
     
 /* 	const addCart = (product) => {
@@ -60,4 +63,3 @@ export const ProductsProvider = ({ children }) => {
 		</ProductsContext.Provider>
     )
 }
-export const ProductsContext = createContext(initialState)
