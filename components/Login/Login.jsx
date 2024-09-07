@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { UserContext } from '../../context/UserContext/UserState'
 import { Form, Input, Button } from 'antd'
@@ -20,6 +20,18 @@ const Login = () => {
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo)
   }
+
+  useEffect(() => {
+    setTimeout(() => {
+      const foundToken = JSON.parse(localStorage.getItem('token'))
+      if (foundToken) {
+        navigate('/profile')
+      }
+    }, 2000)
+  }, [login])
+  
+  
+
 
   return (
     <div className="container">
