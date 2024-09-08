@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import Profile from '../Profile/Profile'
+import Login from '../Login/Login'
+import { UserContext } from '../../context/UserContext/UserState'
 
 function NavBar() {
+  const {token } = useContext(UserContext)
   return (
     <>
       
@@ -25,7 +29,7 @@ function NavBar() {
                 Profile
               </a>
               <ul className="dropdown-menu">
-               {/*  {token ? (
+                {token ? (
                   <>
                     <li><a className="dropdown-item" href="#">Account details</a></li>
                     <Profile/>
@@ -34,16 +38,16 @@ function NavBar() {
                       <hr className="dropdown-divider"/>
                     </li>
                     <li><a className="dropdown-item" href="#">Log out</a></li>
-                    <Logout/>
+                    {/* <Logout/> */}
                   </>
                 ) : (				
                   <>
                     <li><a className="dropdown-item" href="#">Log in</a></li>
                     <Login/>
                     <li><a className="dropdown-item" href="#">Sign in</a></li>
-                    <SignIn/>
+                    {/* <SignIn/> */}
                   </>
-                )} */}
+                )}
               </ul>
             </li>
           </ul>
