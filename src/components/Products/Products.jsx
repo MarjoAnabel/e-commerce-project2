@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react'
+import './Products.scss'
 import { ProductsContext } from '../../context/ProductsContext/ProductsState'
 const Products = () => {
 
@@ -37,7 +38,7 @@ const Products = () => {
     // )
     return(
       <main className='products'>
-        <div className="card-deck"> 
+        <div className="card-deck .card-columns"> 
           {products.slice(0, 10).map(product => {
             return (
               <div className="card">           
