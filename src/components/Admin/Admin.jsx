@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState  } from 'react'
 import { DeleteOutlined } from '@ant-design/icons'
 import { ProductsContext } from '../../context/ProductsContext/ProductsState'
-import CreateProduct from '../Product/CreateProduct'
-import EditProductModal from '../Product/EditProductModal'
+import CreateProduct from '../Products/CreateProduct'
+import EditProductModal from '../Products/EditProductModal'
 
 const Admin = () => {
  const { getProducts, products, deleteProduct, getProductById } = useContext(ProductsContext)
@@ -19,7 +19,7 @@ const Admin = () => {
 
 
  return (<>
-    <CreateProduct/>
+ <CreateProduct/>
      {products ? (products.map((product) => (
          <div key={product._id}>
            <span>{product.name} </span>
@@ -32,8 +32,6 @@ const Admin = () => {
              <EditOutlined />
            </button>
            <EditProductModal visible={isModalVisible} setVisible={setIsModalVisible}/>
-
-
          </div>))
      ) : (
        <span>Loading...</span>
