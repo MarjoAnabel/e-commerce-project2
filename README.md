@@ -1,8 +1,25 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# E-commerce Front
 
-Currently, two official plugins are available:
+En este proyecto vamos ha conectar la Api de e-commerce que se hizo anteriormente implementar el front y back. Este proyecto hemos tenido que hacer algunas modificaciones en el Back sobre los endpoints para poder traer la información correctamente 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Used By
+
+Desarrollo Front
+
+- Login users 
+- Ver productos
+- Editar y borrar productos si eres Admin
+- Hacer pedidos
+- Fotos de los productos
+- El usuario en su perfil pueda ver los pedidos
+
+
+## Authors
+
+- [@Marjoanabel](https://github.com/MarjoAnabel)
+- [@AitziberE](https://github.com/aitziberE)
+
+
+## 🛠 Skills
+React, Router, Context, SASS, Cloudinary, AntDesign
