@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Products.scss'
 import { ProductsContext } from '../../context/ProductsContext/ProductsState'
 const Products = () => {
@@ -12,9 +13,15 @@ const Products = () => {
       //   localStorage.setItem('cart', JSON.stringify(cart))
       // }, [cart])
       const { getProducts, products } = useContext(ProductsContext)
+      const navigate = useNavigate()
+
       useEffect(() => {
         getProducts()
       }, [])
+
+      const handleCardClick = (productId) => {
+        navigate(`/products/${productId}`)
+      }
       
     // return(
     //   <main className='products'>
@@ -41,7 +48,7 @@ const Products = () => {
         <div className="card-deck .card-columns"> 
           {products.slice(0, 10).map(product => {
             return (
-              <div className="card">           
+              <div className="card" key={product.id} onClick={() => handleCardClick(product.id)}>           
                 <img className="card-img-top"
                   src={product.images[0]}
                   alt={product.name}

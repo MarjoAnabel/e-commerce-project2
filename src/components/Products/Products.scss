@@ -12,7 +12,15 @@
         flex: 1 1 200px; // Tamaño mínimo de las cartas
         max-width: 200px; // Ancho máximo de la tarjeta
         margin-bottom: 20px;
-  
+        
+        transition: transform 0.2s, box-shadow 0.2s;
+        cursor: pointer;
+      
+        &:hover {
+          transform: scale(1.05); /* Aumentar el tamaño ligeramente */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añadir una sombra */
+        }
+     
         .card-img-top {
           width: 100%;
           height: auto; // Mantiene la proporción de la imagen

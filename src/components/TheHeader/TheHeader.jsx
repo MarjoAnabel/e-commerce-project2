@@ -6,6 +6,7 @@ import { useContext } from 'react'
 
 import NavBar from '../NavBar/NavBar'
 import Cart from '../Cart/Cart'
+import Products from '../Products/Products'
 
 function TheHeader() {
 
@@ -48,8 +49,8 @@ function TheHeader() {
 					<Cart/>	
 					<NavBar/>
 				</div>
-
 			</div>
+			<Products/>
 		</>
 	)
 	//  return(
