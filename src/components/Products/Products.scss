@@ -1,0 +1,43 @@
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; // Para distribuir las tarjetas
+  
+    .card-deck {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px; // Espaciado entre las cartas
+  
+      .card {
+        flex: 1 1 200px; // Tamaño mínimo de las cartas
+        max-width: 200px; // Ancho máximo de la tarjeta
+        margin-bottom: 20px;
+  
+        .card-img-top {
+          width: 100%;
+          height: auto; // Mantiene la proporción de la imagen
+          max-height: 200px; // Limita la altura de la imagen
+          object-fit: cover; // Para que las imágenes no se deformen
+        }
+  
+        .card-body {
+          padding: 15px;
+  
+          .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+          }
+  
+          .card-text {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+  
+            small.text-muted {
+              color: #6c757d;
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
